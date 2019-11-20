@@ -22,4 +22,6 @@
   * for Android
     * `react-native run-android`
     
+### Project will run with react-hooks by default. For run recompose - set `USE_HOOKS = false` in `index.js`
+
 Done!
