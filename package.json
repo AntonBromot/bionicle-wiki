@@ -1,0 +1,53 @@
+{
+  "name": "Bromotec",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.6.1",
+    "@react-native-community/netinfo": "^4.6.0",
+    "crypto-js": "^3.1.9-1",
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
+    "react": "16.8.6",
+    "react-native": "0.60.5",
+    "react-native-clcasher": "^1.0.0",
+    "react-native-gesture-handler": "^1.4.1",
+    "react-native-reanimated": "^1.2.0",
+    "react-native-safe-area-view": "^0.14.8",
+    "react-native-screens": "^2.0.0-alpha.3",
+    "react-native-splash-screen": "^3.2.0",
+    "react-native-tab-view": "^2.10.0",
+    "react-native-vector-icons": "^6.6.0",
+    "react-native-video": "^5.0.2",
+    "react-navigation": "^4.0.2",
+    "react-navigation-drawer": "^2.1.1",
+    "react-navigation-stack": "^1.5.4",
+    "react-redux": "^7.1.1",
+    "recompose": "^0.30.0",
+    "redux": "^4.0.4",
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.0.5",
+    "rn-fetch-blob": "^0.11.2",
+    "styled-components": "^4.3.2",
+    "url-parse": "^1.4.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.3.0",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.56.0",
+    "react-test-renderer": "16.8.6",
+    "redux-devtools": "^3.5.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
