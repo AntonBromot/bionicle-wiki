@@ -10,6 +10,8 @@
 		00E356F31AD99517003FC87E /* BromotecTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* BromotecTests.m */; };
 		043AA00B2320419E009EAD38 /* libreact-native-splash-screen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 043AA00A2320419E009EAD38 /* libreact-native-splash-screen.a */; };
 		04AAE9432363559100C6D0B6 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AAE9422363559100C6D0B6 /* FontAwesome.ttf */; };
+		04D17DEB238C23640025112D /* Bulb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D17DEA238C23640025112D /* Bulb.swift */; };
+		04D17DEE238C243F0025112D /* Bulb.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D17DED238C243F0025112D /* Bulb.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -56,6 +58,9 @@
 		043AA00023204017009EAD38 /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
 		043AA00A2320419E009EAD38 /* libreact-native-splash-screen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-splash-screen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04AAE9422363559100C6D0B6 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		04D17DE9238C23630025112D /* Bromotec-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bromotec-Bridging-Header.h"; sourceTree = "<group>"; };
+		04D17DEA238C23640025112D /* Bulb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bulb.swift; sourceTree = "<group>"; };
+		04D17DED238C243F0025112D /* Bulb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bulb.m; sourceTree = "<group>"; };
 		0EEA7B719868958D50EB6954 /* Pods-Bromotec-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bromotec-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Bromotec-tvOS/Pods-Bromotec-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		10C2F2AB9425EE0BEE440D4B /* libPods-Bromotec-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bromotec-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* Bromotec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bromotec.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +151,8 @@
 		13B07FAE1A68108700A75B9A /* Bromotec */ = {
 			isa = PBXGroup;
 			children = (
+				04D17DEA238C23640025112D /* Bulb.swift */,
+				04D17DED238C243F0025112D /* Bulb.m */,
 				04AAE9422363559100C6D0B6 /* FontAwesome.ttf */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -154,6 +161,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				04D17DE9238C23630025112D /* Bromotec-Bridging-Header.h */,
 			);
 			name = Bromotec;
 			sourceTree = "<group>";
@@ -318,6 +326,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = DCR27YH2ML;
+						LastSwiftMigration = 1020;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -625,7 +634,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D17DEB238C23640025112D /* Bulb.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				04D17DEE238C243F0025112D /* Bulb.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -679,6 +690,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6415A1197E1ED4AC9F4EBF48 /* Pods-BromotecTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -702,6 +714,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 29A00BAB4062952373FBE996 /* Pods-BromotecTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = BromotecTests/Info.plist;
@@ -723,6 +736,7 @@
 			baseConfigurationReference = 5DADC6E2DADE9F92399FB3A8 /* Pods-Bromotec.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = DCR27YH2ML;
@@ -759,6 +773,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Bromotec;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bromotec-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -768,6 +785,7 @@
 			baseConfigurationReference = 5FE0158100A98AB4C8A92C3C /* Pods-Bromotec.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DCR27YH2ML;
 				HEADER_SEARCH_PATHS = (
@@ -803,6 +821,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Bromotec;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bromotec-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
