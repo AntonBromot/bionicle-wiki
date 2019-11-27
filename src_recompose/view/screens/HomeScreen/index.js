@@ -1,17 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import {compose, withHandlers } from 'recompose';
+import {compose, withHandlers, lifecycle } from 'recompose';
 import Video from "react-native-video"
 
 import ButtonComponent from "../../components/Button"
 import VIDEOS from "../../../resources/videos"
 import { videoStyles, MainText, YellowText, Container } from "./styles"
+import {Linking} from 'react-native';
 
 const TEXT = {
     welcome: "welcome to",
     bionicle: "bionicle",
     wiki: "wiki",
     button: "start legend"
+}
+
+const handleOpenURL = ({ url } , navigation ) => {
+    const route = url?.replace(/.*?:\/\//g, ''),
+        routeName = route?.split('/').pop();
+
+    routeName && navigation.navigate( routeName )
 }
 
 const HomeScreen = ({ navigateToDrawer }) => {
@@ -37,7 +45,19 @@ const HomeScreen = ({ navigateToDrawer }) => {
 
 const enhange = compose(
     withHandlers({
-        navigateToDrawer: props => args => props.navigation.push("Drawer")
+        navigateToDrawer: props => args => props.navigation.push("Drawer"),
+        deepLinkNavigate: ({ navigation }) => e => handleOpenURL(e, navigation)
+    }),
+    lifecycle({
+        componentDidMount() {
+            const { deepLinkNavigate } = this.props
+            if (Platform.OS === 'android') Linking.getInitialURL().then( url => deepLinkNavigate({ url }) );
+            else Linking.addEventListener('url', deepLinkNavigate );
+        },
+        componentWillUnmount() {
+            const { deepLinkNavigate } = this.props
+            Linking.removeEventListener('url', deepLinkNavigate );
+        }
     })
 )
 

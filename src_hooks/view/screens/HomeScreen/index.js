@@ -1,5 +1,6 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import Video from "react-native-video"
+import {Linking} from 'react-native';
 
 import ButtonComponent from "../../components/Button"
 import VIDEOS from "../../../resources/videos"
@@ -12,8 +13,16 @@ const TEXT = {
     button: "start legend"
 }
 
+const handleOpenURL = ( { url }, navigation ) => {
+    const route = url?.replace(/.*?:\/\//g, ''),
+          routeName = route?.split('/').pop();
+
+    routeName && navigation.navigate( routeName )
+}
+
 const HomeScreen = ({ navigation }) => {
-    const navigateToDrawer = useCallback( () => navigation.push("Drawer"), [] )
+    const navigateToDrawer = useCallback( () => navigation.push("Drawer"), [] ),
+          deepLinkNavigate = useCallback( e => handleOpenURL( e, navigation ), [])
 
     const bgVideoProps = {
             source: VIDEOS.homeBackground,
@@ -24,6 +33,13 @@ const HomeScreen = ({ navigation }) => {
             ignoreSilentSwitch: 'obey',
             style: videoStyles.backgroundVideo
           };
+
+    useEffect( () => {
+        if (Platform.OS === 'android') Linking.getInitialURL().then( url => deepLinkNavigate({url})  );
+        else Linking.addEventListener('url', deepLinkNavigate);
+
+        return () => { Linking.removeEventListener('url', deepLinkNavigate) }
+    }, [] )
 
     return (
         <>
